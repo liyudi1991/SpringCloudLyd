@@ -6,110 +6,30 @@
 
     <groupId>com.liyudi</groupId>
     <artifactId>SpringCloudLyd</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <!-- 基于SpringBoot 1.4.5.RELEASE-->
+
+    <!-- 引入SpringCloud微服务常用组件-->
+    <modules>
+        <module>EurekaService</module>
+        <module>SpringCloudConfigServer</module>
+        <module>SpringCloudClient</module>
+    </modules>
+    <!-- 基于SpringBoot 1.5.13.RELEASE-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.5.RELEASE</version>
-        <relativePath/>
+        <version>1.5.13.RELEASE</version>
+        <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
-    <!-- 定义引用类库版本 -->
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Camden.SR7</spring-cloud.version>
-        <springcloud-parent.version>2.0.0-SNAPSHOT</springcloud-parent.version>
-
-        <druid.version>1.0.31</druid.version>
-        <jackson.version>2.8.8</jackson.version>
-        <commons-lang3.version>3.5</commons-lang3.version>
-        <ehcache.version>3.1.4</ehcache.version>
-        <hibernate.version>5.0.12.Final</hibernate.version>
-        <servlet-api.version>3.1.0</servlet-api.version>
-        <commons-collection4.version>4.1</commons-collection4.version>
-
-        <springframework.oxm.version>4.3.9.RELEASE</springframework.oxm.version>
+        <spring-cloud.version>Edgware.SR3</spring-cloud.version>
     </properties>
-    <dependencies>
 
-        <!-- 服务发现组件-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
-        </dependency>
-
-        <!-- 应用监控-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <!-- 应用测试-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>${druid.version}</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet-api.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-            <version>${commons-collection4.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-ehcache</artifactId>
-            <version>${hibernate.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-            <version>${ehcache.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-oxm</artifactId>
-            <version>${springframework.oxm.version}</version>
-        </dependency>
-    </dependencies>
     <dependencyManagement>
         <dependencies>
             <dependency>
